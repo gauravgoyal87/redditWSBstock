@@ -1,29 +1,22 @@
 import React from "react";
+// import data from './Cryptocurrdata.json'
+import axios from "axios";
+import { useState,useEffect } from "react";
 
-const redditURL = 'https://tradestie.com/api/v1/apps/reddit';
+// const CryptocurrURL = 'https://tradestie.com/api/v1/apps/Cryptocurr';
 
-const Reddit = ((props) => {
+const Cryptocurr = ((props) => {
 
 
-let url = redditURL
-console.log(url);
-    fetch(url , {
-        mode: 'no-cors',
-        headers: {
-            "Content-Type": "text/plain"
-        }})
-    .then((res) => 
-   
-    res.json())
-    .then((res) => {
-        console.log(res)})
 
+//     // console.log(data)
+  
     return(
         <div>
-            <h1> Reddit</h1>
+            <h1> Cryptocurr</h1>
         </div>
     )
 })
 
 
-export default Reddit
+export default Cryptocurr
