@@ -6,12 +6,14 @@ function Home(props){
             <h1> HOME</h1>
                 <p>Welcome!!! 
 
-                    I'm sure you have heard of Gamestops crazy price and effect on the stock market. But where and how did this start?
+                    Crypto currency is the way of the future. Invest wisely and you can become a millionaire!!!!!!!!!!!!!
                 </p>
 
-                <p> It all started on a site called Reddit. On reddit we have a section(known as subreddit) that we call Wall Street Bets. Here users discuss stocks and how to invest. As always no one is a professional, do your own research and invest wisely</p>
+                <p> LEARN ABOUT ALL THE CRYPTO THAT YOU LIKE. 
+                    ENJOY THE EXCITING NEW OPPURTUNITIES AVAILABLE TO YOU.
+                </p>
 
-                <p> at this site we we will help you learn about the stocks that Reddit is talking about. Invest wisely on your own.</p>
+                <p> Warning: CRYPTOCURRENCY IS AN INDEPENDENT OPTION. WE ARE NOT RESPONSIBLE FOR ANY TRADES OR VERIFICATION OF CRYPTO DATA WE PROVIDE. IT IS UP TO EACH INDIVIDUAL TO DO THEIR DUE DILIGENCE BEFORE INVESTING.</p>
         </div>
     )
 }

@@ -10,35 +10,32 @@ import axios from 'axios';
 
 
 function App() {
-  const [crypto, setCrypto] = useState([])
+  const [crypto, setCrypto] = useState([]);
   const [search, setSearch] = useState('');
 useEffect(() => {
 
   axios({
-    url: 'https://api.Cryptocurrgecko.com/api/v3/Cryptocurrs/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false',
+    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false',
     method: 'get',
     mode: 'no-cors'
   })
-  .then((response) => {
-      // code for if the request succeeds
-    setCrypto(response.data.data)
-    console.log(crypto)
-    }) 
-  .catch((error)=>{
-      // code for if the request fails
-      console.log(error)
+  .then((response) => {  setCrypto(response)
+    console.log(response)
+    
   }) 
-},[])
+  .catch((error)=>{
+
+    console.log(error)
+  }) 
+},[]);
 const handleChange = e => {
   setSearch(e.target.value);
 };
 
-const filteredCrypto = crypto.filter(currency =>
-  currency.name.toLowerCase().includes(search.toLowerCase())
-);
+console.log(crypto)
 
-  return (
-    <div className="App">
+return (
+  <div className="App">
       <header className="App-header">
       
         <Link to="/">
@@ -51,10 +48,10 @@ const filteredCrypto = crypto.filter(currency =>
         <Link to="/stocks">
         <h2>Stocks</h2>
         </Link>
-        <h1 className='Cryptocurr-text'>Search a currency</h1>
+        <h1 >Search a currency</h1>
         <form>
           <input
-            className='Cryptocurr-input'
+            className='searchbar'
             type='text'
             onChange={handleChange}
             placeholder='Search'
@@ -62,24 +59,9 @@ const filteredCrypto = crypto.filter(currency =>
         </form>
        
       </header>
-      <div className='Cryptocurr-app'>
-      <div className='Cryptocurr-search'>
-      
-      </div>
-      {filteredCrypto.map(Cryptocurr => {
-        return (
-          <Cryptocurr
-            key={Cryptocurr.id}
-            name={Cryptocurr.name}
-            price={Cryptocurr.current_price}
-            symbol={Cryptocurr.symbol}
-            marketcap={Cryptocurr.total_volume}
-            volume={Cryptocurr.market_cap}
-            image={Cryptocurr.image}
-            priceChange={Cryptocurr.price_change_percentage_24h}
-          />
-        );
-      })}
+      <div >
+     
+    
     </div>
   
 
@@ -87,7 +69,7 @@ const filteredCrypto = crypto.filter(currency =>
 
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/cryptocurrency" element={<Cryptocurr />}/>
+        <Route path="/cryptocurrency" element={<Cryptocurr  crypto={crypto}/>}/>
         <Route path="/stocks" element={<Stocks />}/>
 
       </Routes>
