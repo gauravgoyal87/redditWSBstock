@@ -6,15 +6,15 @@ import "./redditwsb.css"
 
 
 const Cryptocurr = ((props) => {
-    let cryptoC = props.crypto.data
+    let cryptoC = props.crypto
 
 console.log(cryptoC)
-let blub = cryptoC.map(crypto => {
+let blub = props.cryptoFilter.map(crypto => {
     return (
     
       
-          <div className='crypto-container'>
-            <div className='crypto-row'>
+          <div className='container'>
+            <div className='box'>
               <div className='crypto'>
                 <img src={crypto.image} alt='crypto' className="coinImage"/>
                 <h1>{crypto.name}</h1>
@@ -22,6 +22,7 @@ let blub = cryptoC.map(crypto => {
               </div>
               <div className='crypto-data'>
                 <p className='crypto-price'>${crypto.current_price}</p>
+                <p className='crypto-pricechange'> Price Change: {crypto.price_change_24h}</p>
              
              </div>
              </div>
@@ -34,8 +35,19 @@ let blub = cryptoC.map(crypto => {
   
     return(
         <div>
-            <h1> CryptocurrENCY</h1>
+            <h1> Cryptocurrency</h1>
+   
+        <form>
+          <input
+            type='text'
+            onChange={props.handleChange}
+            placeholder='Enter Cryptocurrency'
+          />
+        
+        </form>
+            <div className="cards">
             {blub}
+            </div>
             
         
         </div>

@@ -1,16 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes, Link, Navigate,Router } from "react-router-dom";
-import Stocks from './Component/stocks';
+import CryptoPage from './Component/CryptoPage';
 import Home from './Component/home';
 import Cryptocurr from './Component/redditwsb';
 import { useState,useEffect } from "react";
 import axios from 'axios';
+import singleCrypto from './Component/singleCrypto';
 
 
 
 function App() {
   const [crypto, setCrypto] = useState([]);
+  const [currency1, setCurrency1] = useState([]);
   const [search, setSearch] = useState('');
 useEffect(() => {
 
@@ -19,63 +21,57 @@ useEffect(() => {
     method: 'get',
     mode: 'no-cors'
   })
-  .then((response) => {  setCrypto(response)
-    console.log(response)
+  .then((response) => {   setCrypto(response.data);
+    setCurrency1(response.data);
+
     
   }) 
   .catch((error)=>{
-
     console.log(error)
   }) 
 },[]);
-const handleChange = e => {
+
+
+  const handleChange = e => {
   setSearch(e.target.value);
 };
 
-console.log(crypto)
+
+
+const cryptoFilter = crypto.filter(crypto =>
+  crypto.id.toLowerCase().includes(search.toLowerCase())
+);
 
 return (
   <div className="App">
       <header className="App-header">
       
         <Link to="/">
-        <h2>HOME</h2>
+          <h2>HOME</h2>
         </Link>
+        
         <Link to="/cryptocurrency">
+          <h2>CryptoCurrency</h2>
+        </Link>
 
-        <h2>CryptoCurrency</h2>
+        <Link to="/CryptoPage">
+          <h2>CryptoConverter</h2>
         </Link>
-        <Link to="/stocks">
-        <h2>Stocks</h2>
-        </Link>
-        <h1 >Search a currency</h1>
-        <form>
-          <input
-            className='searchbar'
-            type='text'
-            onChange={handleChange}
-            placeholder='Search'
-          />
-        </form>
-       
+
       </header>
       <div >
-     
-    
+       
     </div>
   
-
     <main>
 
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/cryptocurrency" element={<Cryptocurr  crypto={crypto}/>}/>
-        <Route path="/stocks" element={<Stocks />}/>
+        <Route path="/cryptocurrency" element={<Cryptocurr  crypto={crypto} handleChange={handleChange} cryptoFilter={cryptoFilter}/>}/>
+        <Route path="/CryptoPage" element={<CryptoPage currency={currency1}/>}/>
 
       </Routes>
-    </main>
-
-  
+    </main> 
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.body{
+    background: cyan;
+}
+
+.cards {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+ .container{
+     border: solid maroon;
+     width: 18rem;
+     margin: 1rem;
+     background-color: maroon;
+ }
