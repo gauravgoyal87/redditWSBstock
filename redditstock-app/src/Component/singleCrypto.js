@@ -1,19 +1,11 @@
 import React from "react";
-// import data from './Cryptocurrdata.json'
-import axios from "axios";
-import { useState,useEffect } from "react";
-import "./redditwsb.css"
 
 
-const Cryptocurr = ((props) => {
-    let cryptoC = props.crypto.data
+const singleCrypto =(props)=>{
+let crypto = props.crypto2
+    return(
 
-console.log(cryptoC)
-let blub = cryptoC.map(crypto => {
-    return (
-    
-      
-          <div className='container'>
+        <div className='container'>
             <div className='box'>
               <div className='crypto'>
                 <img src={crypto.image} alt='crypto' className="coinImage"/>
@@ -27,24 +19,7 @@ let blub = cryptoC.map(crypto => {
              </div>
              </div>
            </div>
-        )
-      }
     )
-  
-//     // console.log(data)
-  
-    return(
-        <div>
-            <h1> CryptocurrENCY</h1>
-            <div className="cards">
+}
 
-            {blub}
-            </div>
-            
-        
-        </div>
-    )
-})
-
-
-export default Cryptocurr
+export default singleCrypto
