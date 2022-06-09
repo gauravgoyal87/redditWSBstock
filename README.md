@@ -2,7 +2,7 @@
 view stocks talked about on reddit WallStreetBets
 <!-- <h1>Crypto Currency Viewer</h1> -->
 
-![Crypto Screen](/src/Component/crypto.png)
+![Crypto Screen](/redditstock-app/src/Component/crypto.png)
 ***
 
 
