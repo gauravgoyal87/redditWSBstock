@@ -19,7 +19,7 @@ view stocks talked about on reddit WallStreetBets
 <h2>INSTALLATION INSTRUCTIONS:</h2>
 
 No need.
-Go to https://castlefighter.netlify.app/<br>
+Go to https://cryptoappnumberslevin.netlify.app/<br>
 Learn about CryptoCurrencies
 ***
 <h2>USER STORIES:</h2>

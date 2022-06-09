@@ -8,7 +8,7 @@ import "./redditwsb.css"
 const Cryptocurr = ((props) => {
     let cryptoC = props.crypto
 
-console.log(cryptoC)
+
 let blub = props.cryptoFilter.map(crypto => {
     return (
     

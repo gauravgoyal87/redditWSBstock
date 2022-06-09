@@ -7,7 +7,7 @@ import { useState,useEffect } from "react";
 function CryptoPage(props){
 
 
-let selector = props.currency.map(crypto => {
+const selector = props.currency.map(crypto => {
         return (
                 <option value={crypto.current_price} className={crypto.name} >
                 {crypto.name}
@@ -18,16 +18,13 @@ let selector = props.currency.map(crypto => {
     const [chosenSecondaryCrypto, setChosenSecondaryCrypto] = useState('')
     const [amount, setAmount] = useState(1)
     const [result, setResult] = useState(0)
-    function convert () {
-        let change =  (amount *chosenPrimaryCrypto) /chosenSecondaryCrypto ;
-            setResult(change)
-        return(
-            <div> 
-            <h3>
-                 {amount} of the first coin will get you {result} of second coin
-            </h3>
-     </div>
-        )
+    function convert (event) {
+    event.preventDefault();
+
+  let change =  (amount *chosenPrimaryCrypto) /chosenSecondaryCrypto ;
+        setResult(change)
+
+        
     }
 
     return(
@@ -43,32 +40,33 @@ let selector = props.currency.map(crypto => {
         
              <select
                        
-                                className="Crypto-options"
-                                onChange={(e) => {setChosenPrimaryCrypto(e.target.value);
-                         
-                            }
-                                }
+                   className="Crypto-options"
+                   onChange={(e) => {setChosenPrimaryCrypto(e.target.value); 
+                    convert(e)
+                            }  }
                 >
-                                {selector}
+                   {selector}
             </select>
 
-            <select
-                              
-                                onChange={(e) => {setChosenSecondaryCrypto(e.target.value)}
-                                }
-                            >
-                     
-                                {selector}
+            <select      
+                   onChange={(e) => {setChosenSecondaryCrypto(e.target.value); 
+                    convert(e)}
+                                }>
+                   {selector}
           </select>
             
-                            <button id="convert-button" onClick={convert}>Convert</button>
+                     <button id="convert-button" onClick={convert}>Convert</button>
             
-                            </form>
+     </form>
                          
-         
+     <div> 
+            <h3>
+                 {amount} of the first coin will get you {result} of second coin
+            </h3>
+     </div>
 
 
-        </div>
+     </div>
     )
 }
 
