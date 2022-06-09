@@ -6,10 +6,10 @@ import "./redditwsb.css"
 
 
 const Cryptocurr = ((props) => {
-    let cryptoC = props.crypto.data
+    let cryptoC = props.crypto
 
 console.log(cryptoC)
-let blub = cryptoC.map(crypto => {
+let blub = props.cryptoFilter.map(crypto => {
     return (
     
       
@@ -35,9 +35,17 @@ let blub = cryptoC.map(crypto => {
   
     return(
         <div>
-            <h1> CryptocurrENCY</h1>
+            <h1> Cryptocurrency</h1>
+   
+        <form>
+          <input
+            type='text'
+            onChange={props.handleChange}
+            placeholder='Enter Cryptocurrency'
+          />
+        
+        </form>
             <div className="cards">
-
             {blub}
             </div>
             

@@ -1,97 +1,73 @@
 import React from "react";
+import { useState,useEffect } from "react";
+
 
 
 
 function CryptoPage(props){
 
-    console.log(props.currency)
+
 let selector = props.currency.map(crypto => {
         return (
-            <div>
+                <option value={crypto.current_price} className={crypto.name} >
                 {crypto.name}
-
-            </div>
+                </option>            
         )})
-//     const [chosenPrimaryCrypto, setChosenPrimaryCrypto] = useState('')
-//     const [chosenSecondaryCrypto, setChosenSecondaryCrypto] = useState('')
-//     const [amount, setAmount] = useState(1)
-
-//     const [result, setResult] = useState(0)
-
-//     console.log(exchangedData)
-
-//     const convert = () => {
-    
-//     let trade =  chosenPrimaryCryptoprice /chosenSecondaryCryptoprice ;
-//     setResult(trade)
-//     }
-//     return (
-//         <div className="Crypto-converter">
-//             <h2>Crypto Converter</h2>
-
-//             <div className="input-box">
-
-//                 <table>
-//                     <tbody>
-//                     <tr>
-//                         <td>Primary Crypto:</td>
-//                         <td>
-//                             <input
-//                                 type="number"
-//                                 name="Crypto-amount-1"
-//                                 value= ''
-//                                 onChange={(e) => setAmount(e.target.value)}
-//                             />
-//                         </td>
-//                         <td>
-//                             <select
-//                                 value={chosenPrimaryCrypto}
-//                                 name="Crypto-option-1"
-//                                 className="Crypto-options"
-//                                 onChange={(e) => setChosenPrimaryCrypto(e.target.value)}
-//                             >
-//                                 {props.currency.name.map((Name, ) => (<option key={_index}>{Crypto}</option>))}
-//                             </select>
-//                         </td>
-//                     </tr>
-//                     <tr>
-//                         <td>Secondary Crypto:</td>
-//                         <td>
-//                             <input
-//                                 name="Crypto-amount-2"
-//                                 value={result}
-//                                 disabled={true}
-//                             />
-//                         </td>
-//                         <td>
-//                             <select
-//                                 value={chosenSecondaryCrypto}
-//                                 name="Crypto-option-2"
-//                                 className="Crypto-options"
-//                                 onChange={(e) => setChosenSecondaryCrypto(e.target.value)}
-//                             >
-//                                 {currencies.map((Crypto, _index) => (<option key={_index}>{Crypto}</option>))}
-//                             </select>
-//                         </td>
-//                     </tr>
-//                     </tbody>
-//                 </table>
-
-//                 <button id="convert-button" onClick={convert}>Convert</button>
-
-
-//             </div>
-
-
         
-//         </div>
-//     )
-// }
+    const [chosenPrimaryCrypto, setChosenPrimaryCrypto] = useState('')
+    const [chosenSecondaryCrypto, setChosenSecondaryCrypto] = useState('')
+    const [amount, setAmount] = useState(1)
+    const [result, setResult] = useState(0)
+    function convert () {
+        let change =  (amount *chosenPrimaryCrypto) /chosenSecondaryCrypto ;
+            setResult(change)
+        return(
+            <div> 
+            <h3>
+                 {amount} of the first coin will get you {result} of second coin
+            </h3>
+     </div>
+        )
+    }
 
     return(
         <div>
-            <h1> CryptoPage</h1>
-            {selector}
+            <h1> CryptoConverter</h1>
+            <form>
+          <input
+            className='searchbar'
+            type='text'
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder='How many crypto?'
+          />
+        
+             <select
+                       
+                                className="Crypto-options"
+                                onChange={(e) => {setChosenPrimaryCrypto(e.target.value);
+                         
+                            }
+                                }
+                >
+                                {selector}
+            </select>
+
+            <select
+                              
+                                onChange={(e) => {setChosenSecondaryCrypto(e.target.value)}
+                                }
+                            >
+                     
+                                {selector}
+          </select>
+            
+                            <button id="convert-button" onClick={convert}>Convert</button>
+            
+                            </form>
+                         
+         
+
+
         </div>
     )
 }

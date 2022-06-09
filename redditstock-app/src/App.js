@@ -21,7 +21,7 @@ useEffect(() => {
     method: 'get',
     mode: 'no-cors'
   })
-  .then((response) => {   setCrypto(response);
+  .then((response) => {   setCrypto(response.data);
     setCurrency1(response.data);
 
     
@@ -36,11 +36,11 @@ useEffect(() => {
   setSearch(e.target.value);
 };
 
-console.log(crypto)
 
-// const cryptoFilter = crypto.data.filter(crypto =>
-//   crypto.data.name.toLowerCase().includes(searh.toLowerCase())
-// );
+
+const cryptoFilter = crypto.filter(crypto =>
+  crypto.id.toLowerCase().includes(search.toLowerCase())
+);
 
 return (
   <div className="App">
@@ -55,45 +55,23 @@ return (
         </Link>
 
         <Link to="/CryptoPage">
-          <h2>CryptoPage</h2>
+          <h2>CryptoConverter</h2>
         </Link>
-        
-        <h1 >Search a currency</h1>
-        <form>
-          <input
-            className='searchbar'
-            type='text'
-            onChange={handleChange}
-            placeholder='Search'
-          />
-          <button className='search' >SEARCH</button>
-        </form>
-       {/* {cryptoFilter.map(crypto => {
-        return (
-          <singleCrypto  crypto2={crypto} />
-          
-          
-          
-          
-          )})} */}
+
       </header>
       <div >
-     
-    
+       
     </div>
   
-
     <main>
 
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/cryptocurrency" element={<Cryptocurr  crypto={crypto}/>}/>
+        <Route path="/cryptocurrency" element={<Cryptocurr  crypto={crypto} handleChange={handleChange} cryptoFilter={cryptoFilter}/>}/>
         <Route path="/CryptoPage" element={<CryptoPage currency={currency1}/>}/>
 
       </Routes>
-    </main>
-
-  
+    </main> 
     </div>
   );
 }
