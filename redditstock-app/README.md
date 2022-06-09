@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Crypto Currency Viewer
+view stocks talked about on reddit WallStreetBets
+<!-- <h1>Crypto Currency Viewer</h1> -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Crypto Screen](/src/Component/crypto.png)
+***
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+<h2>TECHNOLOGIES USED:</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- JavaScript 
+- HTML 
+- CSS
+- React
+- Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
+<h2>INSTALLATION INSTRUCTIONS:</h2>
 
-### `npm test`
+No need.
+Go to https://castlefighter.netlify.app/<br>
+Learn about CryptoCurrencies
+***
+<h2>USER STORIES:</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user I want to view CryptoCurrencies
+- As a user I want to search for specific CryptoCurrencies
+- As a user I can compare how much of one crypto is worth another
+- As a user I can see multiply CryptoCurrencies
 
-### `npm run build`
+***
+<h2>Unsolved problems or Hurdles</h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. I could not get the graphs and Crypto page to work
+2. I could not get the names of CryptoCurrencies to display when converting them
+3. I could not save specific Cryptos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<strong><em>You can find out about which Crypto you are interested in!!!! Quick calculations and conversions done.</em></strong>
+***
+<h2>What's left?</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<strong>version 2.0</strong>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. []Add Graphs and specific info about each CryptoCurrency
+2. [ ]Create multiple Crypto viewer
+3. [ ]Update graphics
+4. [ ]Animation
